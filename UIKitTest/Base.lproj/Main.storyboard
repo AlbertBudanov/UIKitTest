@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qtd-RC-jPD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Nn-Oy-NMH">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -46,16 +46,149 @@
             </objects>
             <point key="canvasLocation" x="111.59420289855073" y="77.445652173913047"/>
         </scene>
-        <!--Picker View-->
+        <!--Page View Controller-->
+        <scene sceneID="Lgj-Rt-zmm">
+            <objects>
+                <viewController id="6Nn-Oy-NMH" customClass="PageViewController" customModule="UIKitTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WDB-uE-uhW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mRc-te-utv"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ynX-17-e1u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244.92753623188409" y="746.73913043478262"/>
+        </scene>
+        <!--Web View-->
+        <scene sceneID="s1s-7S-6nb">
+            <objects>
+                <viewController id="1N0-rP-1J0" customClass="WebView" customModule="UIKitTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Nx-LO-6sS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vvp-Wg-dbG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRA-k4-bfS">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="Bl6-xV-tRP">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="goBackAction:" destination="1N0-rP-1J0" id="abQ-pm-L8f"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="cm2-Ld-ItG"/>
+                                    <barButtonItem systemItem="fastForward" id="mCq-xv-vm7">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="goForwardAction:" destination="1N0-rP-1J0" id="phF-Dc-4Fa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="52d-h3-Dtc"/>
+                                    <barButtonItem systemItem="refresh" id="wPE-1h-RC4">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="refreshAction:" destination="1N0-rP-1J0" id="xVX-pS-uq6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="1" green="0.46499904025977945" blue="0.51503433304915314" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Tv9-kB-ou2">
+                                <rect key="frame" x="186" y="347" width="42" height="42"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="t3o-8B-Xnv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vvp-Wg-dbG" firstAttribute="leading" secondItem="t3o-8B-Xnv" secondAttribute="leading" id="AWY-Mj-5B4"/>
+                            <constraint firstItem="vvp-Wg-dbG" firstAttribute="top" secondItem="t3o-8B-Xnv" secondAttribute="top" id="ZKm-MX-4zS"/>
+                            <constraint firstItem="KRA-k4-bfS" firstAttribute="trailing" secondItem="t3o-8B-Xnv" secondAttribute="trailing" id="cjc-26-K0N"/>
+                            <constraint firstItem="KRA-k4-bfS" firstAttribute="leading" secondItem="t3o-8B-Xnv" secondAttribute="leading" id="eVm-Or-oSM"/>
+                            <constraint firstItem="KRA-k4-bfS" firstAttribute="bottom" secondItem="t3o-8B-Xnv" secondAttribute="bottom" id="eqI-Xl-ibe"/>
+                            <constraint firstItem="Tv9-kB-ou2" firstAttribute="centerX" secondItem="vvp-Wg-dbG" secondAttribute="centerX" id="hgc-G2-I0h"/>
+                            <constraint firstItem="vvp-Wg-dbG" firstAttribute="bottom" secondItem="t3o-8B-Xnv" secondAttribute="bottom" id="mT6-p0-Eac"/>
+                            <constraint firstItem="Tv9-kB-ou2" firstAttribute="centerY" secondItem="vvp-Wg-dbG" secondAttribute="centerY" id="p5L-bx-iCQ"/>
+                            <constraint firstItem="vvp-Wg-dbG" firstAttribute="trailing" secondItem="t3o-8B-Xnv" secondAttribute="trailing" id="ssL-FV-tVt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="goBackItem" destination="Bl6-xV-tRP" id="H9i-pM-imD"/>
+                        <outlet property="goForwardItem" destination="mCq-xv-vm7" id="IH2-mx-PuR"/>
+                        <outlet property="myActivityIndicator" destination="Tv9-kB-ou2" id="tba-N6-6bf"/>
+                        <outlet property="myWebView" destination="vvp-Wg-dbG" id="SGF-Ga-DW2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fIv-oZ-X3j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144.92753623188406" y="1416.8478260869567"/>
+        </scene>
+        <!--Progress View-->
+        <scene sceneID="haV-8g-8YY">
+            <objects>
+                <viewController id="7ue-cT-0Zq" customClass="ProgressView" customModule="UIKitTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jQ0-Iz-Gtz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="RRS-1I-72J"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DE2-Q7-cab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1382.608695652174" y="787.50000000000011"/>
+        </scene>
+        <!--Slider-->
         <scene sceneID="84S-Yy-LD0">
             <objects>
-                <viewController id="Qtd-RC-jPD" customClass="PickerView" customModule="UIKitTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qtd-RC-jPD" customClass="Slider" customModule="UIKitTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m17-nd-7js">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYm-8u-2dh">
+                                <rect key="frame" x="251" y="423" width="110" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseButton:" destination="Qtd-RC-jPD" eventType="touchUpInside" id="J89-hG-aB7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXl-JM-ezO">
+                                <rect key="frame" x="84" y="423" width="110" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButton:" destination="Qtd-RC-jPD" eventType="touchUpInside" id="bYc-A8-GJU"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zNA-7B-C5b">
+                                <rect key="frame" x="148" y="537" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderAction:" destination="Qtd-RC-jPD" eventType="valueChanged" id="RO7-PU-FXX"/>
+                                </connections>
+                            </slider>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="CdM-Aj-vXq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="sliderValue" destination="zNA-7B-C5b" id="SWb-YQ-Xky"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBp-5J-lnz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,6 +201,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

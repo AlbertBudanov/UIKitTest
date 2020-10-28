@@ -10,10 +10,25 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+//    var window: UIWindow?
+//    var navigation = UINavigationController(rootViewController: MyPageViewController())
+    
+//    Добавляем навигацию
+//    var navContriller = UINavigationController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        
+//        window? = UIWindow(frame: UIScreen.main.bounds)
+//        window?.backgroundColor = UIColor.green
+////        window?.makeKeyAndVisible()
+//        window?.rootViewController = navigation
+//        let viewController = NavigationViewController()
+//        self.navContriller = UINavigationController(rootViewController: viewController)
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.window?.rootViewController = self.navContriller
+//        self.window?.backgroundColor = .black
+//        self.window?.makeKeyAndVisible()
         
         return true
     }
